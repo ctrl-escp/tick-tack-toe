@@ -9,13 +9,10 @@
   <style>
       :root {
           --background-color-base: bisque;
-          --background-color-selected: burlywood;
           --body-background-color: rgba(0, 0, 0, 0.56);
           --dialog-background-color: #272734;
           --dialog-font-color: bisque;
           --font-color-base: black;
-          --font-color-selected: blue;
-          --font-color-highlight: #05ea10;
           --font-size-base: 20px;
       }
       body {
@@ -31,8 +28,8 @@
       #board {
           display: flex;
           flex-wrap: wrap;
-          width: 50vw;
-          height: 50vh;
+          width: 66.66vw;
+          height: 66.66vh;
           margin: auto;
           position: relative;
           border: 1px solid #000;
@@ -44,9 +41,7 @@
             align-items: center;
             box-sizing: border-box;
             border: 1px solid #000;
-            /*height: 33.33%;*/
-            width: 30vw;
-            height: 30vh;
+            height: 33.33%;
             background-color: var(--background-color-base);
             font-size: 22vh;
             font-family: cursive;
@@ -93,6 +88,8 @@
       }
       dialog {
           text-align: center;
+          background-color: var(--dialog-background-color);
+          color: var(--dialog-font-color);
       }
   </style>
 </head>
@@ -125,7 +122,7 @@
 </div>
 <dialog id="game-over">
   <h2></h2>
-  <p><span id="winner"></span> Won!</p>
+  <p><span id="winner"></span> won!</p>
   <button aria-label="Close and Start a New Game" onclick="closeAndStartANewGame()">Close and Start a new game</button>
 </dialog>
 <dialog id="about">
@@ -159,7 +156,10 @@ function closeAndStartANewGame() {
 }
 function showGameOverModal(winner, title) {
     gameOverModal.querySelector('h2').innerText = title;
-    gameOverModal.querySelector('#winner').innerText = winner;
+    const winnerElement = gameOverModal.querySelector('#winner');
+    winnerElement.innerText = winner;
+    winnerElement.classList.remove('X', 'O');
+    if (winner) winnerElement.classList.add(winner);
     gameOverModal.showModal();
 }
 
