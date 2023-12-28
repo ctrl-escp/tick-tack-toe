@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple HTML+JS implementation of Tic-Tac-To by Ben Baryo">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzOTIuNTk4IDM5Mi41OTgiIHhtbDpzcGFjZT0icHJlc2VydmUiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwMDAwMCI+PHBhdGggc3R5bGU9ImZpbGw6I0ZGQzEwRDsiIGQ9Ik0zNzAuNzgsMzIuNzExYzAtNi4wMTItNC44NDgtMTAuOTI1LTEwLjkyNS0xMC45MjVoLTg4LjYzdjk5LjQyNmg5OS40MjZWMzIuNzExSDM3MC43OHoiLz48cmVjdCB4PSIyNzEuMjI0IiB5PSIxNDMuMTI3IiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgd2lkdGg9Ijk5LjQyNiIgaGVpZ2h0PSIxMDYuNDA4Ii8+PHBhdGggc3R5bGU9ImZpbGw6IzE5NEY4MjsiIGQ9Ik0zMjEuMDAyLDMwLjkwMWMtMjEuMzk4LDAtMzguODUzLDE3LjQ1NS0zOC44NTMsMzguODUzczE3LjQ1NSwzOC44NTMsMzguODUzLDM4Ljg1MyBjMjEuMzk4LDAsMzguODUzLTE3LjQ1NSwzOC44NTMtMzguODUzUzM0Mi40LDMwLjkwMSwzMjEuMDAyLDMwLjkwMXogTTMyMS4wMDIsODYuNzU2Yy05LjQzOCwwLTE3LjAwMi03LjYyOC0xNy4wMDItMTcuMDAyIHM3LjYyOC0xNy4wMDIsMTcuMDAyLTE3LjAwMmM5LjM3NCwwLDE3LjAwMiw3LjYyOCwxNy4wMDIsMTcuMDAyUzMzMC40NCw4Ni43NTYsMzIxLjAwMiw4Ni43NTZ6Ii8+PHBhdGggc3R5bGU9ImZpbGw6IzE5NEY4MjsiIGQ9Ik0zMTcuNDQ2LDIzMS44MjJjMjEuMzk4LDAsMzguODUzLTE3LjQ1NSwzOC44NTMtMzguODUzcy0xNy40NTUtMzguODUzLTM4Ljg1My0zOC44NTMgcy0zOC44NTMsMTcuNDU1LTM4Ljg1MywzOC44NTNTMjk1Ljk4NCwyMzEuODIyLDMxNy40NDYsMjMxLjgyMnogTTMxNy40NDYsMTc1Ljk2OGM5LjQzOCwwLDE3LjAwMiw3LjYyOCwxNy4wMDIsMTcuMDAyIGMwLDkuMzc0LTcuNjI4LDE3LjAwMi0xNy4wMDIsMTcuMDAyYy05LjM3NCwwLTE3LjAwMi03LjYyOC0xNy4wMDItMTcuMDAyQzMwMC40NDQsMTgzLjU5NiwzMDguMDA4LDE3NS45NjgsMzE3LjQ0NiwxNzUuOTY4eiIvPjxwYXRoIHN0eWxlPSJmaWxsOiMxOTRGODI7IiBkPSJNNjYuNDI0LDEwNC4zMzljMjEuMzk4LDAsMzguODUzLTE3LjQ1NSwzOC44NTMtMzguODUzUzg3LjgyMiwyNi42MzQsNjYuNDI0LDI2LjYzNCBTMjcuNTcyLDQ0LjA4OSwyNy41NzIsNjUuNTUyUzQ0Ljg5NywxMDQuMzM5LDY2LjQyNCwxMDQuMzM5eiBNNjYuNDI0LDQ4LjQyYzkuNDM4LDAsMTcuMDAyLDcuNjI4LDE3LjAwMiwxNy4wMDIgcy03LjYyOCwxNy4wMDItMTcuMDAyLDE3LjAwMnMtMTcuMDAyLTcuNjI4LTE3LjAwMi0xNy4wMDJDNDkuNDIyLDU2LjExMyw1Ni45ODYsNDguNDIsNjYuNDI0LDQ4LjQyeiIvPjxyZWN0IHg9IjE0My4xNiIgeT0iMjEuNzg2IiBzdHlsZT0iZmlsbDojNTZBQ0UwOyIgd2lkdGg9IjEwNi40MDgiIGhlaWdodD0iOTkuNDI2Ii8+PHJlY3QgeD0iMTQzLjE2IiB5PSIxNDMuMTI3IiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgd2lkdGg9IjEwNi40MDgiIGhlaWdodD0iMTA2LjQwOCIvPjxyZWN0IHg9IjE0My4xNiIgeT0iMjcxLjMyMSIgc3R5bGU9ImZpbGw6I0ZGQzEwRDsiIHdpZHRoPSIxMDYuNDA4IiBoZWlnaHQ9Ijk5LjQyNiIvPjxyZWN0IHg9IjIxLjgxOCIgeT0iMTQzLjEyNyIgc3R5bGU9ImZpbGw6I0ZGQzEwRDsiIHdpZHRoPSI5OS40MjYiIGhlaWdodD0iMTA2LjQwOCIvPjxwYXRoIHN0eWxlPSJmaWxsOiM1NkFDRTA7IiBkPSJNMjcxLjIyNCwzNzAuNzQ3aDg4LjU2NmM2LjAxMiwwLDEwLjkyNS00Ljg0OCwxMC45MjUtMTAuOTI1di04OC41NjZoLTk5LjQ5MVYzNzAuNzQ3eiIvPjxwYXRoIHN0eWxlPSJmaWxsOiM1NkFDRTA7IiBkPSJNMTIxLjI0NCwyNzEuMjU3djk5LjQ5MUgzMi43NDNjLTYuMDEyLDAtMTAuOTI1LTQuODQ4LTEwLjkyNS0xMC45MjV2LTg4LjU2NkgxMjEuMjQ0eiIvPjxwYXRoIHN0eWxlPSJmaWxsOiMxOTRGODI7IiBkPSJNMTY2Ljc1NiwyMjUuODFjNC4yNjcsNC4yNjcsMTEuMTE5LDQuMjY3LDE1LjQ1MSwwbDE0LjA5My0xNC4wOTNsMTQuMTU4LDE0LjE1OCBjNC4yNjcsNC4yNjcsMTEuMTE5LDQuMjY3LDE1LjQ1MSwwYzQuMjY3LTQuMjY3LDQuMjY3LTExLjExOSwwLTE1LjQ1MWwtMTQuMTU4LTE0LjE1OGwxNC4xNTgtMTQuMTU4IGM0LjI2Ny00LjI2Nyw0LjI2Ny0xMS4xMTksMC0xNS40NTFjLTQuMjY3LTQuMjY3LTExLjExOS00LjI2Ny0xNS40NTEsMGwtMTQuMTU4LDE0LjE1OGwtMTQuMTU4LTE0LjE1OCBjLTQuMjY3LTQuMjY3LTExLjExOS00LjI2Ny0xNS40NTEsMGMtNC4yNjcsNC4yNjctNC4yNjcsMTEuMTE5LDAsMTUuNDUxbDE0LjE1OCwxNC4xNThsLTE0LjE1OCwxNC4xNTggQzE2Mi40MjQsMjE0LjYyNiwxNjIuNDI0LDIyMS41NDMsMTY2Ljc1NiwyMjUuODF6Ii8+PHBhdGggc3R5bGU9ImZpbGw6IzE5NEY4MjsiIGQ9Ik0xNjYuNzU2LDk5LjI5N2M0LjI2Nyw0LjI2NywxMS4xMTksNC4yNjcsMTUuNDUxLDBsMTQuMTU4LTE0LjE1OGwxNC4xNTgsMTQuMTU4IGM0LjI2Nyw0LjI2NywxMS4xMTksNC4yNjcsMTUuNDUxLDBjNC4yNjctNC4yNjcsNC4yNjctMTEuMTE5LDAtMTUuNDUxbC0xNC4yMjItMTQuMTU4bDE0LjE1OC0xNC4xNTggYzQuMjY3LTQuMjY3LDQuMjY3LTExLjExOSwwLTE1LjQ1MWMtNC4yNjctNC4yNjctMTEuMTE5LTQuMjY3LTE1LjQ1MSwwbC0xNC4xNTgsMTQuMjIybC0xNC4xNTgtMTQuMTU4IGMtNC4yNjctNC4yNjctMTEuMTE5LTQuMjY3LTE1LjQ1MSwwYy00LjMzMSw0LjI2Ny00LjI2NywxMS4xMTksMCwxNS40NTFsMTQuMTU4LDE0LjA5M2wtMTQuMTU4LDE0LjE1OCBDMTYyLjQyNCw4OC4xMTMsMTYyLjQyNCw5NS4wMywxNjYuNzU2LDk5LjI5N3oiLz48cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTM2LjgxNiwzNTEuNjc3YzQuMjY3LDQuMjY3LDExLjExOSw0LjI2NywxNS40NTEsMGwxNC4xNTgtMTQuMTU4bDE0LjE1OCwxNC4xNTggYzQuMjY3LDQuMjY3LDExLjExOSw0LjI2NywxNS40NTEsMGM0LjI2Ny00LjI2Nyw0LjI2Ny0xMS4xMTksMC0xNS40NTFsLTE0LjE1OC0xNC4xNThsMTQuMTU4LTE0LjE1OCBjNC4yNjctNC4yNjcsNC4yNjctMTEuMTE5LDAtMTUuNDUxYy00LjI2Ny00LjMzMS0xMS4xMTktNC4yNjctMTUuNDUxLDBsLTE0LjE1OCwxNC4xNThsLTE0LjE1OC0xNC4xNTggYy00LjI2Ny00LjI2Ny0xMS4xMTktNC4yNjctMTUuNDUxLDBjLTQuMzMxLDQuMjY3LTQuMjY3LDExLjExOSwwLDE1LjQ1MWwxNC4xNTgsMTQuMTU4bC0xNC4xNTgsMTQuMTU4IEMzMi41NSwzNDAuNTU4LDMyLjU1LDM0Ny40MSwzNi44MTYsMzUxLjY3N3oiLz48cGF0aCBzdHlsZT0iZmlsbDojMTk0RjgyOyIgZD0iTTM1OS44NTUsMEgzMi43NDNDMTQuNzA3LDAsMC4wMzIsMTQuNjc1LDAuMDMyLDMyLjcxMXYzMjcuMTExIGMwLDE4LjEwMSwxNC42NzUsMzIuNzc2LDMyLjcxMSwzMi43NzZoMzI3LjExMWMxOC4wMzYsMCwzMi43MTEtMTQuNjc1LDMyLjcxMS0zMi43MTFWMzIuNzExQzM5Mi41NjYsMTQuNjc1LDM3Ny44OTEsMCwzNTkuODU1LDB6IE0xMjEuMjQ0LDM3MC43NDdIMzIuNzQzYy02LjAxMiwwLTEwLjkyNS00Ljg0OC0xMC45MjUtMTAuOTI1di04OC41NjZoOTkuNDI2VjM3MC43NDd6IE0xMjEuMjQ0LDI0OS40MDZIMjEuODE4VjE0My4xMjdoOTkuNDI2IFYyNDkuNDA2eiBNMTIxLjI0NCwxMjEuMjEySDIxLjgxOFYzMi43MTFjMC02LjAxMiw0Ljg0OC0xMC45MjUsMTAuOTI1LTEwLjkyNWg4OC41NjZ2OTkuNDI2SDEyMS4yNDR6IE0yNDkuNDM4LDM3MC43NDdIMTQzLjE2IHYtOTkuNDI2aDEwNi40MDh2OTkuNDI2TDI0OS40MzgsMzcwLjc0N0wyNDkuNDM4LDM3MC43NDd6IE0yNDkuNDM4LDI0OS40MDZIMTQzLjE2VjE0My4xMjdoMTA2LjQwOHYxMDYuMzQzTDI0OS40MzgsMjQ5LjQwNiBMMjQ5LjQzOCwyNDkuNDA2eiBNMjQ5LjQzOCwxMjEuMjEySDE0My4xNlYyMS43ODZoMTA2LjQwOHY5OS40MjZIMjQ5LjQzOHogTTM3MC43OCwzNTkuODIyYzAsNi4wMTItNC44NDgsMTAuOTI1LTEwLjkyNSwxMC45MjUgaC04OC42M3YtOTkuNDI2aDk5LjQyNnY4OC41NjZMMzcwLjc4LDM1OS44MjJMMzcwLjc4LDM1OS44MjJ6IE0zNzAuNzgsMjQ5LjQwNmgtOTkuNTU2VjE0My4xMjdoOTkuNDI2djEwNi4zNDNMMzcwLjc4LDI0OS40MDYgTDM3MC43OCwyNDkuNDA2eiBNMzcwLjc4LDEyMS4yMTJoLTk5LjU1NlYyMS43ODZoODguNTY2YzYuMDEyLDAsMTAuOTI1LDQuODQ4LDEwLjkyNSwxMC45MjV2ODguNTY2aDAuMDY1VjEyMS4yMTJ6Ii8+PC9zdmc+">
+  <title>Tick-Tack-Toe</title>
+  <style>
+      :root {
+          --background-color-base: bisque;
+          --background-color-selected: burlywood;
+          --body-background-color: rgba(0, 0, 0, 0.56);
+          --dialog-background-color: #272734;
+          --dialog-font-color: bisque;
+          --font-color-base: black;
+          --font-color-selected: blue;
+          --font-color-highlight: #05ea10;
+          --font-size-base: 20px;
+      }
+      body {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          font-size: var(--font-size-base);
+          gap: 1rem;
+          background-color: var(--body-background-color);
+          margin: 0;
+          color: white;
+      }
+      #board {
+          display: flex;
+          flex-wrap: wrap;
+          width: 50vw;
+          height: 50vh;
+          margin: auto;
+          position: relative;
+          border: 1px solid #000;
+
+        .cell {
+            flex: 0 0 33.33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            /*height: 33.33%;*/
+            width: 30vw;
+            height: 30vh;
+            background-color: var(--background-color-base);
+            font-size: 22vh;
+            font-family: cursive;
+        }
+          /*noinspection CssUnusedSymbol*/
+        .winning-cell {
+            background-color: darkseagreen;
+        }
+      }
+      /*noinspection CssUnusedSymbol*/
+      .X {
+          color: dodgerblue;
+          cursor: not-allowed;
+      }
+      /*noinspection CssUnusedSymbol*/
+      .O {
+          color: indianred;
+          cursor: not-allowed;
+      }
+      header {
+          display: flex;
+          align-items: center;
+          background-color: #272734;
+          width: 100%;
+          height: 3rem;
+          justify-content: space-between;
+
+          &> * {
+            padding: 0 .5rem;
+          }
+
+          .github-icon {
+              width: 2rem;
+              height: 2rem;
+          }
+
+          .icons {
+              display: flex;
+              svg {
+                  width: 2rem;
+                  height: 2rem;
+              }
+          }
+      }
+      dialog {
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <span class="icons" title="Tick-Tack-Toe (Tic Tac Toe)">
+    <span title="Tick"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M262.814 30.928c-45.906 0-87.66 14.34-118.3 38.04-14.03 10.848-25.742 23.76-34.33 38.14C62.524 121.06 34.67 152.56 27.18 195.53l-.903.484v5.6l.315 11.575 13.433-3.335c18.986-10.147 35.96-20.838 55.51-28.12.67 4.975 1.594 10.117 2.754 15.382C61.73 222.19 45.91 257.53 50 298l2.213 14.736 17.488-7.617c16.886-15.993 31.755-31.746 52.01-43.66 2.002 4.01 4.103 8.004 6.293 11.974-35.37 36.242-42.357 78.908-23.906 121.18l27.66-14.92c7.346-11.84 15.943-31.266 36.64-49.378-.025-.87-.043-1.742-.043-2.62 0-7.837 1.042-15.437 2.998-22.682-4.66-5.79-9.128-11.88-13.36-18.202-27.896-41.66-45.08-92.657-45.08-123.38 0-30.724 16.028-58.796 43.032-79.682 27.005-20.886 64.872-34.135 106.867-34.135 6.58 0 13.058.326 19.41.955-11.582 5.078-21.29 13.262-27.677 24.325-18.658 32.317-1.922 76.91 37.383 99.603 39.304 22.693 86.29 14.89 104.95-17.428 5.5-9.527 7.9-20.122 7.577-30.908 5.368 11.72 8.254 24.255 8.254 37.27 0 30.723-17.18 81.72-45.075 123.38-4.22 6.3-8.67 12.37-13.313 18.14 1.967 7.265 3.016 14.885 3.016 22.745 0 1.27-.034 2.53-.088 3.785 22.408 20.605 32.73 43.688 39.72 53.995l21.3 16.617c18.45-42.273 14.66-92.274-20.65-128.653 2.193-3.97 4.292-7.967 6.296-11.98 20.255 11.914 35.125 27.666 52.012 43.66l19.885 14.423-.186-21.543c4.093-40.47-11.73-75.813-48.287-100.885 1.16-5.264 2.085-10.406 2.754-15.38 19.55 7.282 36.524 17.973 55.51 28.12l14.058 3.874-1.215-18.2c-7.49-42.968-35.343-74.47-83.002-88.423-8.588-14.38-20.302-27.29-34.33-38.14-30.64-23.698-72.395-38.04-118.3-38.04zm-163.45 99.984c-3.26 10.148-5.043 20.778-5.124 31.74-16.51 5.534-30.982 13.13-44.828 20.764 7.684-23.967 23.493-41.285 49.95-52.504zm326.902 0c26.46 11.22 42.267 28.538 49.95 52.506-13.846-7.635-28.317-15.23-44.827-20.764-.082-10.962-1.865-21.593-5.124-31.742zm-4.112 85.608c23.598 17.643 34.558 38.642 35.37 64.376-13.365-12.764-27.59-25.714-45.827-36.185 4.08-9.494 7.58-18.95 10.457-28.19zm-318.68 0c2.878 9.242 6.38 18.698 10.458 28.193-18.237 10.47-32.46 23.418-45.825 36.182.813-25.734 11.77-46.73 35.368-64.374zm159.374 39.31c-42.21 0-75.803 32.31-75.803 71.867 0 39.558 33.594 71.867 75.803 71.867 42.21 0 75.802-32.31 75.802-71.867s-33.593-71.867-75.802-71.867zM138 290.334c1.46 2.31 2.946 4.605 4.467 6.877 4.38 6.542 9.026 12.92 13.91 19.056-18.564 16.267-30.434 34.722-41.264 52.636-7.033-27.92-.324-53.167 22.887-78.568zm249.63 0c23.21 25.4 29.92 50.65 22.886 78.568-10.83-17.914-22.7-36.37-41.264-52.636 4.884-6.136 9.53-12.514 13.91-19.055 1.52-2.27 3.006-4.567 4.467-6.876zm-177.466 21.684c5.127.1 10.9 3.764 14.52 9.746 4.828 7.976 4.003 17.05-1.844 20.27-5.847 3.22-14.5-.634-19.328-8.61-4.828-7.976-4.003-17.054 1.843-20.274 1.462-.805 3.1-1.166 4.81-1.132zm105.3 0c1.71-.034 3.348.327 4.81 1.132 5.846 3.22 6.67 12.298 1.843 20.274-4.828 7.976-13.483 11.83-19.33 8.61-5.847-3.22-6.672-12.294-1.844-20.27 3.62-5.982 9.395-9.646 14.522-9.746zm-85.048 42.54c5.127.082 10.9 3.143 14.522 8.14 4.828 6.665 4.003 14.25-1.844 16.94-5.847 2.69-14.502-.533-19.33-7.197-4.828-6.662-4.002-14.246 1.845-16.936 1.46-.673 3.097-.975 4.806-.947zm64.795 0c1.71-.03 3.348.273 4.81.946 5.846 2.69 6.67 10.274 1.843 16.937-4.828 6.665-13.48 9.887-19.328 7.197-5.847-2.69-6.674-10.274-1.846-16.938 3.62-5 9.394-8.06 14.52-8.143zm-121.804 2.374c-12.4 13.703-19.69 30.394-19.69 48.433 0 30.078 20.512 56.227 50.913 71.264-1.72-5.363-3.306-11.134-3.306-17.028 0-19.838 10.488-37.37 26.45-47.836-25.386-9.772-45.44-29.816-54.368-54.834zm178.864.05c-9.04 25.286-29.448 45.486-55.237 55.122 15.68 10.503 25.953 27.87 25.953 47.498 0 6.14-1.45 12.104-3.306 17.66 31.118-14.92 52.234-41.395 52.234-71.897 0-18.017-7.27-34.69-19.644-48.383z"/></svg></span>
+    <span title="Tack"><svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 319.808 319.808" xml:space="preserve"><path d="M317.16,159.471c-16.197-16.199-41.195-24.41-74.307-24.41c-7.01,0-14.408,0.379-22.047,1.121l-79.729-75.346l19.04-19.035 c3.529-3.531,3.529-9.252-0.003-12.785l-26.42-26.424c-3.39-3.391-9.394-3.391-12.784,0L2.648,120.863 c-3.531,3.531-3.531,9.252-0.002,12.783l26.416,26.416c1.697,1.695,3.995,2.648,6.394,2.648c2.397,0,4.697-0.953,6.392-2.648 l19.042-19.035l75.346,79.726c-3.048,31.352-1.057,72.018,23.284,96.358c1.766,1.766,4.079,2.648,6.391,2.648 c2.314,0,4.629-0.884,6.395-2.648l66.035-66.041l50.578,50.582c1.768,1.766,4.08,2.648,6.395,2.648 c2.312,0,4.629-0.884,6.393-2.648c3.531-3.531,3.531-9.254,0-12.785l-50.582-50.58l66.037-66.03 C320.691,168.725,320.691,163.005,317.16,159.471z M166.505,297.334c-14.614-21.172-14.7-53.803-11.859-78.743 c0.3-2.648-0.581-5.297-2.413-7.23l-84.589-89.516c-1.678-1.775-4.002-2.791-6.443-2.826c-0.042,0-0.086,0-0.128,0 c-2.397,0-4.697,0.953-6.392,2.647l-19.225,19.221l-13.632-13.631L127.303,21.769l13.636,13.641L121.716,54.63 c-1.726,1.73-2.68,4.078-2.646,6.525c0.035,2.436,1.057,4.768,2.832,6.443l89.507,84.582c1.936,1.836,4.574,2.719,7.23,2.41 c8.455-0.963,16.602-1.449,24.213-1.449c23.465,0,41.756,4.469,54.539,13.314L166.505,297.334z"/></svg></span>
+    <span title="Toe"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 303.55 368.39"><g stroke="#000" stroke-width="2" transform="translate(-117.43 -332.52)" fill="white"><path d="m131.23 700.16c0.0175-0.4125 0.60661-1.506 1.3091-2.4301 1.4307-1.8818 0.88207-8.6952-1.7972-22.32-0.86526-4.4-2.4622-15.2-3.5487-23.999-1.0865-8.7994-2.9166-22.074-4.0667-29.5-2.8055-18.112-3.8006-46.62-2.3994-68.741 0.68522-10.818 0.77522-19.27 0.2314-21.732-0.48947-2.2153-1.3194-9.8779-1.8442-17.028-0.52483-7.15-1.2066-15.983-1.5152-19.63-0.47386-5.6009-0.0778-8.1953 2.5515-16.716 2.0819-6.7467 4.3005-11.642 6.7007-14.787 1.9736-2.5855 4.2532-6.3134 5.0659-8.2841 3.2985-7.9989 10.565-13.998 17.031-14.061 0.67292-0.007 7.3714-2.28 10.305 14.849 3.839 22.413 2.9588 52.726 3.0286 51.785 2.0707-27.935-6.965-72.402-6.557-75.333 1.2956-9.311 5.2111-23.069 8.0777-28.383 3.3207-6.156 9.5891-11.375 15.608-12.996 2.6604-0.71636 7.7976-0.86173 14.444-0.40873 8.3168 0.56687 12.179 19.009 10.719 2.906-1.1032-12.168 9.3835-22.719 19.076-27.491 16.803-8.2719 32.847 0.42594 37.909 20.551 0.83004 3.3 1.8245 11.85 2.2099 19 0.81923 15.199 1.5092 17.772 4.6439 17.319 3.7473-0.54114 4.0172-5.6501 1.0472-19.819-4.8585-23.178-3.4302-33.827 5.6801-42.349 6.242-5.8386 13.387-8.0856 23.623-7.4287 9.0777 0.58257 15.28 3.9006 18.794 10.054 1.8934 3.3159 7.6416 20.863 7.6416 23.327 0 0.2829 0.45 0.23626 1-0.10366s1-1.7354 1-3.1012c0-5.8016 3.3348-18.437 6.7032-25.399 2.5291-5.2269 5.6244-9.4978 10.213-14.091 8.6275-8.6374 14.848-11.184 27.584-11.291 12.095-0.10193 19.005 2.1638 25.946 8.507 6.1987 5.6652 9.3586 11.734 16.435 31.563 8.0874 22.662 8.7523 34.17 3.6324 62.867-1.3791 7.7299-2.9768 21.005-3.5505 29.5-4.0865 60.512-4.9507 70.995-6.4254 77.946-2.9533 13.919-5.6832 26.176-9.4658 42.5-6.0217 25.988-8.3364 43.798-10.592 81.5-0.63258 10.572-2.2623 27.023-3.0958 31.25l-0.54223 2.75h-124.92c-99.228 0-124.94-0.25709-125-1.25-0.0632-1-0.17983-1-0.58334 0-0.54269 1.3449-2.3584 1.7386-2.3059 0.5zm82.719-261.33c0.23309-5.9628-7.7163-40.564-9.1506-38.706-2.0781 2.6911 5.0475 40.247 5.828 43.357 1.1799 4.701 3.0598 2.0697 3.3225-4.6504zm119.25-3.9289c0-2.1077-6.4732-46.532-7.3982-48.116-1.5254-2.6135 0.15721 30.241 1.8982 40.125 0.8235 4.675 1.4979 8.6125 1.4986 8.75 0.00075 0.1375 0.90137 0.25 2.0014 0.25s2-0.4537 2-1.0082z"/><path d="m224.29 26.957s7.1428-11.429 21.429-12.857c14.286-1.4286 25.714-2.8571 30 2.8571 4.28 5.715 4.28 7.143 4.28 7.143l-1.4286 35.714s-30-5.7143-37.143 0l-7.1428 5.7143z" transform="translate(117.43 332.52)"/><path d="m277.9 370.79s3.7258-5.9612 11.177-6.7064c7.4515-0.74516 13.413-1.4903 15.648 1.4903 2.2355 2.9806 2.2355 3.7258 2.2355 3.7258l-0.74516 18.629s-15.648-2.9806-19.374 0l-3.7258 2.9806z"/><path d="m216.47 385.08s3.7258-5.9612 11.177-6.7064c7.4515-0.74516 13.413-1.4903 15.648 1.4903 2.2355 2.9806 2.2355 3.7258 2.2355 3.7258l-0.74516 18.629s-15.648-2.9806-19.374 0l-3.7258 2.9806z"/><path d="m169.33 412.22s3.7258-5.9612 11.177-6.7064c7.4515-0.74516 13.413-1.4903 15.648 1.4903 2.2355 2.9806 2.2355 3.7258 2.2355 3.7258l-0.74516 18.629s-15.648-2.9806-19.374 0l-3.7258 2.9806z"/><path d="m135.86 455s2.4179-3.8686 7.2537-4.3522c4.8358-0.48359 8.7044-0.96717 10.155 0.96716 1.4507 1.9343 1.4507 2.4179 1.4507 2.4179l-0.48359 12.09s-10.155-1.9343-12.573 0l-2.4179 1.9343z"/></g></svg></span>
+  </span>
+  <button aria-label="About" onclick="document.getElementById('about').showModal()">About</button>
+  <span>Current player: <span id="player"></span></span>
+  <button aria-label="Restart Game" onclick="initBoard()">Restart Game</button>
+  <span class="github-icon" title="Click to view source code on GitHub">
+    <a href="https://github.com/ctrl-escp/tick-tack-toe">
+      <svg data-v-c613a0f3="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="white" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+  </span>
+</header>
+<div id="board">
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+</div>
+<dialog id="game-over">
+  <h2></h2>
+  <p><span id="winner"></span> Won!</p>
+  <button aria-label="Close and Start a New Game" onclick="closeAndStartANewGame()">Close and Start a new game</button>
+</dialog>
+<dialog id="about">
+  <h2>Tick-Tack-Toe</h2>
+  <p>
+    Developed by Ben Baryo
+    <br>
+    https://github.com/ctrl-escp/tick-tack-toe
+  </p>
+  <button aria-label="Close Modal" onclick="document.getElementById('about').close();">Close</button>
+</dialog>
+<script>
+let isX = true;
+const gameOverModal = document.getElementById('game-over');
+const player = document.getElementById('player');
+
+function getAllCells() {
+    return Array.from(document.querySelectorAll('.cell'));
+}
+
+function togglePlayer(initToX = false) {
+    isX = initToX ? true : !isX;
+    const val = initToX ? 'X' : isX ? 'X' : 'O';
+    player.classList.remove('X', 'O');
+    player.classList.add(val);
+    player.innerText = val;
+}
+function closeAndStartANewGame() {
+    gameOverModal.close();
+    initBoard();
+}
+function showGameOverModal(winner, title) {
+    gameOverModal.querySelector('h2').innerText = title;
+    gameOverModal.querySelector('#winner').innerText = winner;
+    gameOverModal.showModal();
+}
+
+function isGameOver() {
+    const cells = getAllCells();
+    const rows = [
+        cells.slice(0, 3),
+        cells.slice(3, 6),
+        cells.slice(6),
+    ];
+    const cols = [
+        [cells[0], cells[3], cells[6]],
+        [cells[1], cells[4], cells[7]],
+        [cells[2], cells[5], cells[8]],
+    ];
+    const diagonals = [
+        [cells[0], cells[4], cells[8]],
+        [cells[2], cells[4], cells[6]],
+    ];
+    for (const trio of [...rows, ...cols, ...diagonals]) {
+        const v = trio[0].innerText;
+        if (v && trio[1].innerText === v && trio[2].innerText === v) {
+            for (const cell of trio) cell.classList.add('winning-cell');
+            cells.forEach(el => el.removeEventListener('click', clickOnCell));
+            showGameOverModal(v, 'Congratulations!');
+            return true;
+        }
+    }
+    if (cells.every(c => c.innerText)) {
+        showGameOverModal('Nobody', 'Game Over!');
+    }
+    return false
+}
+
+function clickOnCell(e) {
+    const cell = e.target;
+    if (!cell.innerText) {
+        const val = isX ? 'X' : 'O'
+        cell.innerText = val;
+        cell.classList.add(val);
+        togglePlayer();
+        isGameOver();
+    }
+}
+
+function initBoard() {
+    getAllCells().forEach(el => {
+        togglePlayer(true); // init to X
+        el.innerText = '';
+        el.classList.remove('O', 'X', 'winning-cell');
+        el.removeEventListener('click', clickOnCell);
+        el.addEventListener('click', clickOnCell);
+    });
+}
+initBoard();
+</script>
+</body>
+</html>
