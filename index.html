@@ -25,6 +25,9 @@
           margin: 0;
           color: white;
       }
+      button {
+          cursor: pointer;
+      }
       #board {
           display: flex;
           flex-wrap: wrap;
@@ -45,7 +48,7 @@
             height: 34%;
             background-color: var(--background-color-base);
             font-size: 12vw;
-            font-family: cursive;
+            cursor: pointer;
             @media (max-width: 700px) {
                 font-size: 8rem;
             }
@@ -58,12 +61,14 @@
       /*noinspection CssUnusedSymbol*/
       .X {
           color: dodgerblue;
-          cursor: not-allowed;
+          font-family: cursive;
+          cursor: not-allowed !important;
       }
       /*noinspection CssUnusedSymbol*/
       .O {
           color: indianred;
-          cursor: not-allowed;
+          font-family: cursive;
+          cursor: not-allowed !important;
       }
       header {
           display: flex;
