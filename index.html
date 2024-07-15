@@ -8,103 +8,104 @@
   <title>Tick-Tack-Toe</title>
   <style>
       :root {
-          --background-color-base: bisque;
-          --body-background-color: rgba(0, 0, 0, 0.56);
-          --dialog-background-color: #272734;
-          --dialog-font-color: bisque;
-          --font-color-base: black;
-          --font-size-base: 20px;
+        --background-color-base: bisque;
+        --body-background-color: rgba(0, 0, 0, 0.56);
+        --dialog-background-color: #272734;
+        --dialog-font-color: bisque;
+        --font-color-base: black;
+        --font-size-base: 20px;
+        --text-transition-time: .2s;
       }
       body {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          font-size: var(--font-size-base);
-          gap: 1rem;
-          background-color: var(--body-background-color);
-          margin: 0;
-          color: white;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-size: var(--font-size-base);
+        gap: 1rem;
+        background-color: var(--body-background-color);
+        margin: 0;
+        color: white;
       }
       button {
-          cursor: pointer;
+        cursor: pointer;
       }
       #board {
-          display: flex;
-          flex-wrap: wrap;
-          height: 75vh;
-          margin: auto;
-          position: relative;
-          border: 1px solid #000;
-
+        display: flex;
+        flex-wrap: wrap;
+        height: 75vh;
+        margin: auto;
+        position: relative;
+        border: 1px solid #000;
         .cell {
-            flex: 0 0 33.33%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            border: 1px solid #000;
-            width: 11vw;
-            max-height: 100%;
-            height: 34%;
-            background-color: var(--background-color-base);
-            font-size: 12vw;
-            cursor: pointer;
-            @media (max-width: 700px) {
-                font-size: 8rem;
+          flex: 0 0 33.33%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-sizing: border-box;
+          border: 1px solid #000;
+          width: 11vw;
+          max-height: 100%;
+          height: 34%;
+          background-color: var(--background-color-base);
+          font-size: 12vw;
+          cursor: pointer;
+          color: transparent;
+          @media (max-width: 700px) {
+              font-size: 8rem;
             }
         }
         /*noinspection CssUnusedSymbol*/
         .winning-cell {
-            background-color: darkseagreen;
+          background-color: darkseagreen;
         }
       }
       /*noinspection CssUnusedSymbol*/
       .X {
-          color: dodgerblue;
-          font-family: cursive;
-          cursor: not-allowed !important;
+        color: dodgerblue !important;
+        font-family: cursive;
+        cursor: not-allowed !important;
+        transition: color var(--text-transition-time) linear;
       }
       /*noinspection CssUnusedSymbol*/
       .O {
-          color: indianred;
-          font-family: cursive;
-          cursor: not-allowed !important;
+        color: indianred !important;
+        font-family: cursive;
+        cursor: not-allowed !important;
+        transition: color var(--text-transition-time) linear;
+
       }
       header {
+        display: flex;
+        align-items: center;
+        background-color: #272734;
+        width: 100%;
+        height: 3rem;
+        justify-content: space-between;
+        &> * {
+          padding: 0 .5rem;
+        }
+        .github-icon {
+          width: 2rem;
+          height: 2rem;
+        }
+        .icons {
           display: flex;
-          align-items: center;
-          background-color: #272734;
-          width: 100%;
-          height: 3rem;
-          justify-content: space-between;
-
-          &> * {
-            padding: 0 .5rem;
-          }
-
-          .github-icon {
+          svg {
               width: 2rem;
               height: 2rem;
           }
-
-          .icons {
-              display: flex;
-              svg {
-                  width: 2rem;
-                  height: 2rem;
-              }
-          }
+        }
       }
       dialog {
-          text-align: center;
-          background-color: var(--dialog-background-color);
-          color: var(--dialog-font-color);
+        text-align: center;
+        background-color: var(--dialog-background-color);
+        color: var(--dialog-font-color);
       }
       [role="button"] {
-          &:active {
-              transform: translate(2px, 2px);
-              animation: tranform 0.2s ease;
-          }
+        &:active {
+          transform: translate(2px, 2px);
+          animation: tranform 0.2s ease;
+      }
       }
   </style>
 </head>
@@ -161,9 +162,7 @@ const gameOverModal = document.getElementById('game-over');
 const player = document.getElementById('player');
 const timerEl = document.getElementById('timer');
 
-function getAllCells() {
-    return Array.from(document.querySelectorAll('.cell'));
-}
+const getAllCells = () => Array.from(document.querySelectorAll('.cell'));
 
 function togglePlayer(initToX = false) {
     isX = initToX ? true : !isX;
